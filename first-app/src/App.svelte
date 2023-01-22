@@ -1,18 +1,37 @@
 <script>
-	export let name;
-	export let age;
+  export let name;
+  // let name = "Kaz";
+  
+  // export let age;
+  let age = 27;
 
-	function ageIncrementer() {
-		age ++;
-	}
+  // let uppercaseName; not required!
+
+  $: uppercaseName = name.toUpperCase();
+
+  function incrementAge() {
+    age ++;
+  }
+
+  function changeName() {
+    name = "Kaz";
+  }
+
+  function nameInput(event) {
+    const enteredValue = event.target.value;
+    name = enteredValue;
+  }
 </script>
 
 <style>
-	h1 {
-		color: rgb(44, 180, 139);
-	}
+  h1 {
+    color: purple;
+  }
 </style>
 
-<h1>👋🏽Hey, I'm {name}.</h1>
-<h1>I'm {age} years old!</h1>
-<button on:click={ageIncrementer}>Age up!</button>
+<h1>Hey, I'm {uppercaseName}.</h1>
+<br>
+<h1> my age is {age}!</h1>
+<button on:click={incrementAge}>Change Age</button>
+<!-- <button on:click="{changeName}">Change Name</button> -->
+<input placeholder="enter name" type="text" on:input={nameInput} />
