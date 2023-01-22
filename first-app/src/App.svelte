@@ -1,17 +1,18 @@
 <script>
-	let name = 'Max';
-	let age = 30;
+	export let name;
+	export let age;
 
-	function incrementAge() {
-		age += 1;
+	function ageIncrementer() {
+		age ++;
 	}
 </script>
 
 <style>
 	h1 {
-		color: purple;
+		color: rgb(44, 180, 139);
 	}
 </style>
 
-<h1>Hello {name}, my age is {age}!</h1>
-<button on:click="{incrementAge}">Change Age</button>
+<h1>👋🏽Hey, I'm {name}.</h1>
+<h1>I'm {age} years old!</h1>
+<button on:click={ageIncrementer}>Age up!</button>
