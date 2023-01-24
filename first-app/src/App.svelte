@@ -2,17 +2,17 @@
   import ContactCard from "./ContactCard.svelte";
   import InputGroup from "./InputGroup.svelte";
 
-  export let name;
+  export let userName;
   // export let age;
   // let name = 'Kaz';
   // let age = 27;
   let jobTitle = '';
   let description = '';
-  let url ='';
+  let userImg ='';
 
   // let uppercaseName; not required!
 
-  $: uppercaseName = name.toUpperCase();
+  $: uppercaseName = userName.toUpperCase();
 
   // function incrementAge() {
   //   age ++;
@@ -62,12 +62,12 @@ button:active {
 }
 </style>
 
-<InputGroup valueNeeded="name." placeholder="Ex: John" bind:value={name}/>
+<InputGroup valueNeeded="name." placeholder="Ex: John" bind:value={userName}/>
 <InputGroup valueNeeded="job title." placeholder="Ex: Smith" bind:value={jobTitle}/>
 <InputGroup
   valueNeeded="image url."
   placeholder="https://media.licdn.com/dms/image/C5603AQFBRKu_6EWQeg/profile-displayphoto-shrink_800_800/0/1656078955408?e=2147483647&v=beta&t=gX8_J4PmYgKMhphzxG9h1l5m5I9VEC1PRkNvDB5j1Ic"
-  bind:value={url}
+  bind:value={userImg}
 />
 
 <!-- This one is a text area, didn't feel like modifying InputGroup component -->
@@ -76,9 +76,10 @@ button:active {
   <textarea placeholder="I love traveling and coding😎" cols=35 rows=5 bind:value={description}/>
 </div>
 
+<!-- Same as userName = userName, the left comes from component, the right operand comes from app -->
 <ContactCard
-  url={url}
-  userName={name}
-  jobTitle={jobTitle}
-  description={description}
+  {userImg} 
+  {userName}
+  {jobTitle}
+  {description}
 />

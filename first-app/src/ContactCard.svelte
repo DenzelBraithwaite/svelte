@@ -4,7 +4,7 @@
   export let userName;
   export let jobTitle;
   export let description;
-  export let url;
+  export let userImg;
 
 </script>
 
@@ -65,7 +65,7 @@
 <div class="contact-card">
   <header>
     <div class="thumb">
-      <img src={url} alt="A user generated image" />
+      <img src={userImg} alt="A user generated image" />
     </div>
     <div class="user-data">
       <h1>{userName}</h1>
@@ -73,6 +73,7 @@
     </div>
   </header>
   <div class="description">
+    <!-- <p>{@html description}</p> -->
     <p>{description}</p>
   </div>
 </div>
