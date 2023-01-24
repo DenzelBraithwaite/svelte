@@ -1,3 +1,13 @@
+<script>
+  //  Variables exported like this are properties of the component.
+  // Export allows variable to be set / used from outside
+  export let userName;
+  export let jobTitle;
+  export let description;
+  export let url;
+
+</script>
+
 <style>
   .contact-card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -54,14 +64,14 @@
 <div class="contact-card">
   <header>
     <div class="thumb">
-      <img src="" alt="" />
+      <img src={url} alt="" />
     </div>
     <div class="user-data">
-      <h1>User Name</h1>
-      <h2>Job Title</h2>
+      <h1>{userName}</h1>
+      <h2>{jobTitle}</h2>
     </div>
   </header>
   <div class="description">
-    <p>A short description</p>
+    <p>{description}</p>
   </div>
 </div>
