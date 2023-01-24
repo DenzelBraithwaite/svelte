@@ -76,4 +76,9 @@ button:active {
   <textarea placeholder="I love traveling and coding😎" cols=35 rows=5 bind:value={description}/>
 </div>
 
-<ContactCard url={url} userName={name} jobTitle={jobTitle} description={description}/>
+<ContactCard
+  url={url}
+  userName={name}
+  jobTitle={jobTitle}
+  description={description}
+/>

@@ -39,6 +39,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 1rem;
   }
 
   h1 {
@@ -64,7 +65,7 @@
 <div class="contact-card">
   <header>
     <div class="thumb">
-      <img src={url} alt="" />
+      <img src={url} alt="A user generated image" />
     </div>
     <div class="user-data">
       <h1>{userName}</h1>
