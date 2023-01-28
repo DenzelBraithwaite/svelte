@@ -91,7 +91,7 @@ ul li:hover {
 <button on:click={addPassword}>Add</button>
 
 <ul>
-	{#each passwordList as password, i}
+	{#each passwordList as password, i (password)}
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<li on:click={deletePassword.bind(this, i)}>{password}</li>
 	{/each}
