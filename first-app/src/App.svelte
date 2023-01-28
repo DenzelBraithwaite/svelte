@@ -60,6 +60,10 @@ button:active {
   background-color: rgb(72, 226, 226);
   margin-bottom: 1rem;
 }
+
+.bg-yellow {
+  background-color: #ffeaa7;
+}
 </style>
 
 <InputGroup valueNeeded="name." placeholder="Ex: John" bind:value={userName}/>
@@ -71,7 +75,7 @@ button:active {
 />
 
 <!-- This one is a text area, didn't feel like modifying InputGroup component -->
-<div class="input-group">
+<div class="input-group" class:bg-yellow={description}>
   <h4>Enter a short description</h4>
   <textarea placeholder="I love traveling and coding😎" cols=35 rows=5 bind:value={description}/>
 </div>

@@ -22,7 +22,6 @@ export let placeholder;
 input {
     width: 90%;
 }
-
 </style>
 
 
