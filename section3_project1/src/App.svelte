@@ -19,12 +19,21 @@
     } else {
       formState = 'valid';
         contactCards = [...contactCards, {
+        id: Math.random(),
         name: name,
         title: title,
         image: image,
         description: description
       }]
     }
+  }
+
+  function deleteFirst() {
+    contactCards = contactCards.slice(1);
+  }
+
+  function deleteLast() {
+    contactCards = contactCards.slice(0, -1);
   }
 </script>
 
@@ -57,11 +66,14 @@
   </div>
 </div>
 
+<button on:click={addCard}>Create Card</button>
+<button on:click={deleteFirst}>Delete First</button>
+<button on:click={deleteLast}>Delete Last</button>
 {#if formState === 'invalid'}
   <h1 style="background-color: red">Invalid entry!</h1>
 {/if}
 
-{#each contactCards as cc, i}
+{#each contactCards as cc, i (cc.id)}
   <h2>#{i}</h2>
 <ContactCard
   userName={cc['name']}
@@ -75,5 +87,3 @@
   description="Troubleshooting computer problems."
   userImage="https://memorial-assets.frontrunnerpro.com/include/site_storage/473/DeathRecordStub/4628719/converted/9d54ca0e7ad0bccfad227614ab235a99.png" />
 {/each}
-
-<button on:click={addCard}>Create Card</button>
