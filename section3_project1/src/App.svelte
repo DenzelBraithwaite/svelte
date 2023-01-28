@@ -59,20 +59,21 @@
 
 {#if formState === 'invalid'}
   <h1 style="background-color: red">Invalid entry!</h1>
+{/if}
+
+{#each contactCards as cc, i}
+  <h2>#{i}</h2>
+<ContactCard
+  userName={cc['name']}
+  jobTitle={cc['title']}
+  userImage={cc['image']} 
+  description={cc['description']}/>
 {:else}
-  <ContactCard
+<ContactCard
   userName="Denzel"
   jobTitle="Technician"
   description="Troubleshooting computer problems."
   userImage="https://memorial-assets.frontrunnerpro.com/include/site_storage/473/DeathRecordStub/4628719/converted/9d54ca0e7ad0bccfad227614ab235a99.png" />
-{/if}
-
-{#each contactCards as cc}
-<ContactCard
-userName={cc['name']}
-jobTitle={cc['title']}
-userImage={cc['image']} 
-description={cc['description']}/>
 {/each}
 
 <button on:click={addCard}>Create Card</button>
