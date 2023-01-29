@@ -6,7 +6,7 @@
     export let subtitle;
     export let imgUrl;
     export let description;
-    export let location;
+    export let address;
     let email = '';
 </script>
 
@@ -85,7 +85,7 @@
     <header>
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
-        <h3>{location}</h3>
+        <h3>{address}</h3>
     </header>
         <div class="image">
             <img src={imgUrl} alt={description}>

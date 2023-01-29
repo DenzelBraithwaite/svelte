@@ -1,6 +1,7 @@
 <script>
     import MeetupCard from "./MeetupCard.svelte";
     export let meetups;
+
 </script>
 
 <style>
@@ -29,6 +30,6 @@
     subtitle="{meet.subtitle}"
     description="{meet.description}"
     imgUrl="{meet.imageUrl}"
-    location="{meet.location}"/>
+    address="{meet.address}"/>
     {/each}
   </section>

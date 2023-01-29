@@ -1,10 +1,25 @@
-<script>
-    export let title;
-    export let subtitle;
-    export let description;
-    export let address;
-    export let imgUrl;
-    export let email;
+<!-- <script>
+    let title = '';
+    let subtitle = '';
+    let address = '';
+    let email = '';
+    let imgUrl = '';
+    let description = '';
+    let meetups = [];
+    
+    function newMeetup() {
+        meetups = [
+            {   
+                id: Math.random(),
+                title: title,
+                subtitle: subtitle,
+                address: address,
+                email: email,
+                imgUrl: imgUrl,
+                description: description
+            }, ...meetups
+        ]
+    }
 </script>
 
 <style>
@@ -18,7 +33,7 @@
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.212);
     }
 
-    h2 {
+    form h2 {
         background-color: #a00d26;
         border-radius: 0.5rem 0.5rem 0 0;
         padding: 1rem 0;
@@ -73,7 +88,7 @@
     }
 </style>
 
-<form action="#">
+<form on:submit|preventDefault={newMeetup}>
     <h2>Create Meetup</h2>
     <input bind:value={title} id="title" type="text" placeholder="Title">
     <input bind:value={subtitle} id="subtitle" type="text" placeholder="Subtitle">
@@ -82,4 +97,4 @@
     <input bind:value={imgUrl} id="imgUrl" type="text" placeholder="Image Url">
     <textarea bind:value={description} id="description" placeholder="Description"></textarea>
     <input type="submit" class="btn-submit">
-  </form>
+</form> -->
