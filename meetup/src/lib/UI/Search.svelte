@@ -6,9 +6,6 @@
 <style>
     .input {
         display: flex;
-        margin-top: 200px;
-        margin-right: auto;
-        margin-left: auto;
         justify-content: space-between;
     }
     

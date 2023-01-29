@@ -7,7 +7,7 @@
     export let imgUrl;
     export let description;
     export let location;
-    export let email;
+    let email = '';
 </script>
 
 <style>

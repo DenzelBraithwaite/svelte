@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from './lib/UI/Header.svelte'
-  import MeetupCard from './lib/meetups/MeetupCard.svelte'
+  import MeetupGrid from './lib/meetups/MeetupGrid.svelte'
   import Button from './lib/UI/Button.svelte'
   import SearchBar from './lib/UI/Search.svelte'
 
@@ -37,20 +37,19 @@
     width: 90%;
     margin: 0 auto;
   }
+
+  main {
+    margin-top: 6rem;
+  }
 </style>
 
 <div class="lg-container">
-  <SearchBar />
-  <Header />
-  <section id="meetups">
-    {#each meetups as meet, i (meet.id)}
-    <MeetupCard
-    meetId="{meet.id}"
-    title="{meet.title}"
-    subtitle="{meet.subtitle}"
-    description="{meet.description}"
-    imgUrl="{meet.imageUrl}"
-    location="{meet.location}"/>
-    {/each}
-  </section>
+  <header>
+    <Header />
+  </header>
+  
+  <main>
+    <SearchBar />
+    <MeetupGrid meetups="{meetups}"/>
+  </main>
 </div>
