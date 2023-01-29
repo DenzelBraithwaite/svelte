@@ -5,11 +5,13 @@
 
 <style>
     button {
+        font-weight: 700;
+        display: inline-block;
         border: none;
         border-radius: 100px;
         color: #fff;
         padding: 0.5rem 1rem;
-        box-shadow: 2px 0 8px #0000001e;
+        /* box-shadow: 2px 0 8px #00000049; */
     }
 
     button:hover,
@@ -18,16 +20,24 @@
     }
 
     .bg-red {
-        background-color: #A00D26;
+        background-color: #b81530;
+        box-shadow: 2px 0 8px #a00d2556;
     }
 
     .bg-red:hover,
     .bg-red:active {
-        background-color: #940d23;
+        background-color: #a3132b;
+        
     }
 
     .bg-blue {
-        background-color: #170da0;
+        background-color: #2fa884;
+        box-shadow: 2px 0 8px #00000049;
+    }
+
+    .bg-blue:hover,
+    .bg-blue:active {
+        background-color: #25886a;
     }
 </style>
 

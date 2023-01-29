@@ -11,6 +11,7 @@
       justify-content: center;
       align-items: center;
       box-shadow: 0 2px 10px #00000042;
+      z-index: 1;
     }
   
     h1 {
@@ -19,5 +20,5 @@
   </style>
   
   <header>
-    <h1>MeetMeat</h1>
+    <h1>MeetMeat 💑</h1>
   </header>

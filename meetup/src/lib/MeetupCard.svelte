@@ -1,47 +1,73 @@
 <script>
     import Button from './Button.svelte'
 
-    const meetups = [
-        {
-            id: 'm1',
-            title: 'Men\'s Code Night',
-            subtitle: 'Build a landing page in 2 hours',
-            description: 'Spend an evening learning the fundamentals of coding, surrounded by like-minded individuals.',
-            imageUrl: 'https://images.squarespace-cdn.com/content/v1/593040b8414fb5fe9c94eac5/1530995349369-98KY66Z3QY909YNQW3NX/asc3_zps288d94f7.jpg?format=300w',
-            location: '5333 Casgrain Ave, H4R1D7'
-        },
-        {
-            id: 'm2',
-            title: 'Women\'s Yoga Night',
-            subtitle: 'Learn to Relax in Minutes',
-            description: 'Spend an evening doing yoga in a park.',
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZmFbgS9RgsaoxMVO4GYxjH9RgpyvEXTeGCQcfZRpElUdv_UInT_EwxHU834b517MKf6M&usqp=CAU',
-            location: '122 park Ave, J8H2D3'
-        }
-    ];
+    export let meetId;
+    export let title;
+    export let subtitle;
+    export let imgUrl;
+    export let description;
+    export let location;
 </script>
 
 <style>
-article {
-    margin-top: 100px;
-}
+    article {
+        position: relative;
+        margin: 5rem 0;
+        background-color: #0000001a;
+        border: 1px solid #a00d2565;
+        border-radius: 0.25rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.199);
+    }
+
+    article img {
+        border-radius: 0.25rem 0.25rem 0 0;
+    }
+
+    header h1,
+    header h2 {
+        text-shadow: 0 2px #0000004d
+    }
+
+    header h1 {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    header h2 {
+        position: absolute;
+        top: 3.5rem;
+        left: 1rem;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .image img{
+        width: 100%;
+        height: 50vh;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+        margin-left: 1rem;
+    }
 </style>
 
-{#each meetups as meet, i (meet.id)}
-    <article>
-        <header>
-            <h1>{meet.title}</h1>
-            <h2>{meet.subtitle}</h2>
-        </header>
-            <div class="image">
-                <img src={meet.imageUrl} alt={meet.description}>
-            </div>
-            <div class="content">
-                <p></p>
-            </div>
-            <footer>
-                <Button text="Show Details" btnClass="bg-red"/>
-                <Button text="Favourite" btnClass="bg-blue"/>
-            </footer>
-    </article>
-{/each}
+<article>
+    <header>
+        <h1>{title}</h1>
+        <h2>{subtitle}</h2>
+    </header>
+        <div class="image">
+            <img src={imgUrl} alt={description}>
+        </div>
+        <div class="content">
+            <p></p>
+        </div>
+        <footer>
+            <Button text="Show Details" btnClass="bg-red"/>
+            <Button text="Favourite" btnClass="bg-red"/>
+        </footer>
+</article>
