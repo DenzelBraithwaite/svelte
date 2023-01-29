@@ -1,10 +1,9 @@
 <script lang="ts">
+  import Header from './lib/Header.svelte'
 </script>
 
 <style>
 
 </style>
 
-<header>
-  <h1>Hello World.</h1>
-</header>
+<Header />
