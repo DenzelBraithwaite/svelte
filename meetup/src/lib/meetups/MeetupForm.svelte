@@ -5,95 +5,62 @@
 <style>
 
     form {
-        background-color: #d86377;
-        padding: 1rem 2rem;
-        margin: 0 auto;
-        width: 80%;
+        margin: 2rem auto;
+        width: 400px;
         border-radius: 1rem;
         text-align: center;
-        border: 2px solid #a00d26;
-    }
-
-    .form-control {
-        display: flex;
-        margin-bottom: 0.5rem;
-        justify-content: space-between;
-        font-weight: bold;
-        color: #fff;
-        letter-spacing: 0.5px;
-    }
-
-    .form-control input {
-        background-color: #ffeeee;
-        width: 80%;
-        padding: 2px 0;
-        border: none;
-        border-radius: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .form-control input:focus {
-        background-color: #eed6d6;
-        outline: 2px solid #a00d26;
+        background-color: #fff;
     }
 
     h2 {
-        text-decoration: underline #444;
+        background-color: #a00d26;
+        border-radius: 0.5rem 0.5rem 0 0;
+        padding: 1rem 0;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+
+    form input {
+        width: 90%;
+        margin-bottom: 1.25rem;
+        border: none;
+        border-bottom: 1px solid #a00d26;
+    }
+
+    form input::placeholder {
+        color: rgba(68, 68, 68, 0.548);
+    }
+
+    form input:focus {
+        outline: none;
     }
 
     .btn-submit {
         text-decoration: none;
-        color: #444;
+        color: #fff;
         font-weight: 700;
-        border: 2px solid #444;
+        border: none;
         border-radius: 1rem;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 0.5rem;
         font-size: 14px;
         letter-spacing: 0;
-        background-color: #eed6d6;
+        background-color: #a00d26;
     }
 
     .btn-submit:hover,
     .btn-submit:active {
-        color: #444;
-        font-weight: bold;
-        background-color: #f8ebeb;
+        background-color: #911026;
         cursor: pointer;
     }
 </style>
 
-<form action="./App.svelte">
+<form action="#">
     <h2>Create Meetup</h2>
-    <br>
-    <div class="form-control">
-      <label for="">Title</label>
-      <input type="text">
-    </div>
-
-    <div class="form-control">
-      <label for="">Subtitle</label>
-      <input type="text">
-    </div>
-
-    <div class="form-control">
-      <label for="">Description</label>
-      <input type="text">
-    </div>
-
-    <div class="form-control">
-      <label for="">Address</label>
-      <input type="text">
-    </div>
-    
-    <div class="form-control">
-      <label for="">Image Url</label>
-      <input type="text">
-    </div>
-
-    <div class="form-control">
-      <label for="">Email</label>
-      <input type="text">
-    </div>
-
+    <input type="text" placeholder="Title">
+    <input type="text" placeholder="Subtitle">
+    <input type="text" placeholder="Description">
+    <input type="text" placeholder="Address">
+    <input type="text" placeholder="Image Url">
+    <input type="text" placeholder="Email address">
     <input type="submit" class="btn-submit">
   </form>
