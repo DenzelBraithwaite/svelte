@@ -13,7 +13,6 @@
 <style>
     article {
         position: relative;
-        margin: 5rem 0;
         background-color: #0000001a;
         border: 1px solid #a00d2565;
         border-radius: 0.25rem;

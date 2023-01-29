@@ -7,6 +7,7 @@
     .input {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 1rem;
     }
     
     input {

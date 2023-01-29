@@ -3,6 +3,7 @@
   import MeetupGrid from './lib/meetups/MeetupGrid.svelte'
   import Button from './lib/UI/Button.svelte'
   import SearchBar from './lib/UI/Search.svelte'
+  import MeetupForm from './lib/meetups/MeetupForm.svelte'
 
   const meetups = [
         {
@@ -34,7 +35,7 @@
 
 <style>
   .lg-container{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
   }
 
@@ -50,6 +51,7 @@
   
   <main>
     <SearchBar />
-    <MeetupGrid meetups="{meetups}"/>
+    <MeetupForm />
+    <MeetupGrid {meetups}/>
   </main>
 </div>

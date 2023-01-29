@@ -4,7 +4,21 @@
 </script>
 
 <style>
+    #meetups {
+        margin: 5rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 3rem;
+    }
 
+    @media (max-width: 1100px) {
+        #meetups {
+            margin: 5rem 0;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 
 <section id="meetups">
