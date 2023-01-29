@@ -8,7 +8,7 @@
         font-weight: 700;
         display: inline-block;
         border: none;
-        border-radius: 100px;
+        border-radius: 1rem;
         color: #fff;
         padding: 0.5rem 1rem;
         /* box-shadow: 2px 0 8px #00000049; */

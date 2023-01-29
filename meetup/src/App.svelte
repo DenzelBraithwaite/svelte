@@ -40,7 +40,7 @@
 
 <div class="lg-container">
   <Header />
-  <section>
+  <section id="meetups">
     {#each meetups as meet, i (meet.id)}
     <MeetupCard
     meetId="{meet.id}"

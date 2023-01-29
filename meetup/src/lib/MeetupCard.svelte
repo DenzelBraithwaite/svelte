@@ -7,6 +7,7 @@
     export let imgUrl;
     export let description;
     export let location;
+    export let email;
 </script>
 
 <style>
@@ -53,6 +54,24 @@
         padding: 0.5rem 0;
         margin-left: 1rem;
     }
+
+    article > footer a {
+        text-decoration: none;
+        color: #b81530;
+        font-weight: 700;
+        border: 2px solid #b81530;
+        border-radius: 1rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    article > footer a:hover,
+    article > footer a:hover {
+        color: #b81530;
+        font-weight: bold;
+        text-decoration: underline;
+    }
 </style>
 
 <article>
@@ -67,6 +86,7 @@
             <p></p>
         </div>
         <footer>
+            <a href="mailto:{email}">Contact</a>
             <Button text="Show Details" btnClass="bg-red"/>
             <Button text="Favourite" btnClass="bg-red"/>
         </footer>
