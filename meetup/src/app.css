@@ -9,3 +9,7 @@
     box-sizing: border-box;
     /* line-height: 1; */
 }
+
+body {
+    background-color: #ffeeee;
+}

@@ -1,5 +1,5 @@
 <script>
-    import Button from './Button.svelte'
+    import Button from '../UI/Button.svelte'
 
     export let meetId;
     export let title;
@@ -25,7 +25,8 @@
     }
 
     header h1,
-    header h2 {
+    header h2,
+    header h3 {
         text-shadow: 0 2px #0000004d
     }
 
@@ -45,9 +46,17 @@
         font-size: 1rem;
     }
 
+    header h3 {
+        position: absolute;
+        top: 5rem;
+        left: 1rem;
+        color: #fff;
+        font-size: 0.9rem;
+    }
+
     .image img{
         width: 100%;
-        height: 50vh;
+        height: 400px;
     }
 
     footer {
@@ -78,6 +87,7 @@
     <header>
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
+        <h3>{location}</h3>
     </header>
         <div class="image">
             <img src={imgUrl} alt={description}>

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Header from './lib/Header.svelte'
-  import MeetupCard from './lib/MeetupCard.svelte'
-  import Button from './lib/Button.svelte'
+  import Header from './lib/UI/Header.svelte'
+  import MeetupCard from './lib/meetups/MeetupCard.svelte'
+  import Button from './lib/UI/Button.svelte'
 
   const meetups = [
         {
