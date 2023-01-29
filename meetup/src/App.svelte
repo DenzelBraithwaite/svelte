@@ -2,6 +2,7 @@
   import Header from './lib/UI/Header.svelte'
   import MeetupCard from './lib/meetups/MeetupCard.svelte'
   import Button from './lib/UI/Button.svelte'
+  import SearchBar from './lib/UI/Search.svelte'
 
   const meetups = [
         {
@@ -39,6 +40,7 @@
 </style>
 
 <div class="lg-container">
+  <SearchBar />
   <Header />
   <section id="meetups">
     {#each meetups as meet, i (meet.id)}
