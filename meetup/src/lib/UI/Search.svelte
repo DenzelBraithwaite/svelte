@@ -8,6 +8,7 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 1rem;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.212);
     }
     
     input {

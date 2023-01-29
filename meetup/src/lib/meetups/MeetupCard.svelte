@@ -13,14 +13,13 @@
 <style>
     article {
         position: relative;
-        background-color: #0000001a;
-        border: 1px solid #a00d2565;
-        border-radius: 0.25rem;
+        background-color: #fff;
+        border-radius: 0.5rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.199);
     }
 
     article img {
-        border-radius: 0.25rem 0.25rem 0 0;
+        border-radius: 0.5rem 0.5rem 0 0;
     }
 
     header h1,

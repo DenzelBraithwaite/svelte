@@ -1,5 +1,10 @@
 <script>
-
+    export let title;
+    export let subtitle;
+    export let description;
+    export let address;
+    export let imgUrl;
+    export let email;
 </script>
 
 <style>
@@ -10,6 +15,7 @@
         border-radius: 1rem;
         text-align: center;
         background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.212);
     }
 
     h2 {
@@ -35,6 +41,19 @@
         outline: none;
     }
 
+    form textarea {
+        resize: none;
+        width: 90%;
+        margin-bottom: 2rem;
+        border: 1px solid #a00d26;
+        border-radius: 4px;
+        padding: 0.5rem;
+    }
+
+    form textarea:focus {
+        outline: none;
+    }
+
     .btn-submit {
         text-decoration: none;
         color: #fff;
@@ -56,11 +75,11 @@
 
 <form action="#">
     <h2>Create Meetup</h2>
-    <input type="text" placeholder="Title">
-    <input type="text" placeholder="Subtitle">
-    <input type="text" placeholder="Description">
-    <input type="text" placeholder="Address">
-    <input type="text" placeholder="Image Url">
-    <input type="text" placeholder="Email address">
+    <input bind:value={title} id="title" type="text" placeholder="Title">
+    <input bind:value={subtitle} id="subtitle" type="text" placeholder="Subtitle">
+    <input bind:value={address} id="address" type="text" placeholder="Address">
+    <input bind:value={email} id="email" type="text" placeholder="Email address">
+    <input bind:value={imgUrl} id="imgUrl" type="text" placeholder="Image Url">
+    <textarea bind:value={description} id="description" placeholder="Description"></textarea>
     <input type="submit" class="btn-submit">
   </form>
