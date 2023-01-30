@@ -1,8 +1,9 @@
 <script lang="ts">
+  import Product from './lib/products/Product.svelte'
 </script>
 
 <style>
 
 </style>
 
-<h1>Hello World</h1>
+<Product productTitle="Soap" on:click={() => alert('hi')}/>
