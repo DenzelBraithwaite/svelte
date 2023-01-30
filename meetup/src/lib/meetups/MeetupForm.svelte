@@ -31,6 +31,9 @@
     }
 
     .btn-submit {
+        display: inline-block;
+        margin: 1rem auto;
+        width: 90%;
         text-decoration: none;
         color: #fff;
         font-weight: 700;
@@ -56,6 +59,14 @@
     <TextInput  on:input={(event) => {address = event.target.value}} value={address}  id="address" inputType="text" placeholder="Adress"/>
     <TextInput  on:input={(event) => {email = event.target.value}} value={email}  id="email" inputType="text" placeholder="Email"/>
     <TextInput  on:input={(event) => {imgUrl = event.target.value}} value={imgUrl}  id="img-url" inputType="text" placeholder="Image Url"/>
-    <TextInput  on:input={(event) => {description = event.target.value}} value={description}  id="description" inputType="textarea" placeholder="Enter a description..."/>
+
+    <!-- Description, textarea -->
+    <TextInput
+        rows=3
+        inputType="textarea"
+        on:input={(event) => {description = event.target.value}}
+        value={description} 
+        id="description"
+        placeholder="Enter a description..."/>
     <input type="submit" class="btn-submit">
 </form>

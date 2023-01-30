@@ -44,7 +44,7 @@
 
 </style>
 
-{#if inputType = 'text'}
+{#if inputType === 'text'}
     <input on:input value={value} type="text" name="{id}" id="{id}"  placeholder="{placeholder}">
 {:else}
     <textarea on:input value={value} name="{id}" id="{id}" cols="{cols}" rows="{rows}"  placeholder="{placeholder}"></textarea>
