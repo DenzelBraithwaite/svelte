@@ -17,9 +17,12 @@
         border-radius: 0.5rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.199);
     }
-
+    
     article img {
         border-radius: 0.5rem 0.5rem 0 0;
+        min-height: 400px;
+        width: 100%;
+        height: 400px;
     }
 
     header h1,
@@ -52,11 +55,6 @@
         font-size: 0.9rem;
     }
 
-    .image img{
-        width: 100%;
-        height: 400px;
-    }
-
     footer {
         padding: 0.5rem 0;
         margin-left: 1rem;
@@ -87,7 +85,7 @@
         <h2>{subtitle}</h2>
         <h3>{address}</h3>
     </header>
-        <div class="image">
+        <div class="image">  <!-- Do I need this?w-->
             <img src={imgUrl} alt={description}>
         </div>
         <div class="content">

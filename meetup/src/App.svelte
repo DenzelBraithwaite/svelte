@@ -3,7 +3,7 @@
   import MeetupGrid from './lib/meetups/MeetupGrid.svelte'
   import Button from './lib/UI/Button.svelte'
   import SearchBar from './lib/UI/Search.svelte'
-  // import MeetupForm from './lib/meetups/MeetupForm.svelte'
+  import MeetupForm from './lib/meetups/MeetupForm.svelte'
 
   let title = '';
   let subtitle = '';
@@ -19,7 +19,7 @@
             subtitle: 'Build a landing page in 2 hours',
             address: '5333 Casgrain Ave, H4R1D7',
             email: 'garfunkle@email.com',
-            imageUrl: 'https://marvel-b1-cdn.bc0a.com/f00000000290162/images.ctfassets.net/2htm8llflwdx/4XolI59CsK1wMCiAfwathv/2130a24167699d727f450eafa2941388/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg?fit=thumb',
+            imgUrl: 'https://marvel-b1-cdn.bc0a.com/f00000000290162/images.ctfassets.net/2htm8llflwdx/4XolI59CsK1wMCiAfwathv/2130a24167699d727f450eafa2941388/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg?fit=thumb',
             description: 'Spend an evening learning the fundamentals of coding, surrounded by like-minded individuals.'
         },
         {
@@ -28,7 +28,7 @@
             subtitle: 'Learn to Relax in Minutes',
             address: '122 park Ave, J8H2D3',
             email: 'dawda@email.com',
-            imageUrl: 'https://gwinnettmagazine.com/wp-content/uploads/2021/07/yoga2.jpg',
+            imgUrl: 'https://gwinnettmagazine.com/wp-content/uploads/2021/07/yoga2.jpg',
             description: 'Spend an evening doing yoga in a park.'
         },
         {
@@ -37,7 +37,7 @@
             subtitle: 'Enjoy some friendly soccer matches',
             address: '122 park Ave, J8H2D3',
             email: 'email@email.com',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Warminster_Community_Park_soccer_fields.jpg',
+            imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Warminster_Community_Park_soccer_fields.jpg',
             description: 'Enjoy an efternoon playing soccer and soaking in vitamin D.'
         }
     ];
@@ -138,17 +138,7 @@
   
   <main>
     <SearchBar />
-    <!-- <MeetupForm /> -->
-    <form on:submit|preventDefault={addMeetup}>
-      <h2>Create Meetup</h2>
-      <input bind:value={title} id="title" type="text" placeholder="Title">
-      <input bind:value={subtitle} id="subtitle" type="text" placeholder="Subtitle">
-      <input bind:value={address} id="address" type="text" placeholder="Address">
-      <input bind:value={email} id="email" type="text" placeholder="Email address">
-      <input bind:value={imgUrl} id="imgUrl" type="text" placeholder="Image Url">
-      <textarea bind:value={description} id="description" placeholder="Description"></textarea>
-      <input type="submit" class="btn-submit">
-  </form>
+    <MeetupForm on:submit={addMeetup} {meetups}/>
     <MeetupGrid {meetups}/>
-  </main>
+  </main>   
 </div>

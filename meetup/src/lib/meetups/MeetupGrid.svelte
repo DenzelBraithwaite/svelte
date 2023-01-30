@@ -29,7 +29,7 @@
     title="{meet.title}"
     subtitle="{meet.subtitle}"
     description="{meet.description}"
-    imgUrl="{meet.imageUrl}"
+    imgUrl="{meet.imgUrl}"
     address="{meet.address}"/>
     {/each}
   </section>

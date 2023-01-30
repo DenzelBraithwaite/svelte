@@ -1,25 +1,14 @@
-<!-- <script>
+<script>
+    import TextInput from '../UI/TextInput.svelte';
+
     let title = '';
     let subtitle = '';
     let address = '';
     let email = '';
     let imgUrl = '';
     let description = '';
-    let meetups = [];
+    export let meetups;
     
-    function newMeetup() {
-        meetups = [
-            {   
-                id: Math.random(),
-                title: title,
-                subtitle: subtitle,
-                address: address,
-                email: email,
-                imgUrl: imgUrl,
-                description: description
-            }, ...meetups
-        ]
-    }
 </script>
 
 <style>
@@ -41,34 +30,6 @@
         margin-bottom: 2rem;
     }
 
-    form input {
-        width: 90%;
-        margin-bottom: 1.25rem;
-        border: none;
-        border-bottom: 1px solid #a00d26;
-    }
-
-    form input::placeholder {
-        color: rgba(68, 68, 68, 0.548);
-    }
-
-    form input:focus {
-        outline: none;
-    }
-
-    form textarea {
-        resize: none;
-        width: 90%;
-        margin-bottom: 2rem;
-        border: 1px solid #a00d26;
-        border-radius: 4px;
-        padding: 0.5rem;
-    }
-
-    form textarea:focus {
-        outline: none;
-    }
-
     .btn-submit {
         text-decoration: none;
         color: #fff;
@@ -88,13 +49,13 @@
     }
 </style>
 
-<form on:submit|preventDefault={newMeetup}>
+<form on:submit|preventDefault>
     <h2>Create Meetup</h2>
-    <input bind:value={title} id="title" type="text" placeholder="Title">
-    <input bind:value={subtitle} id="subtitle" type="text" placeholder="Subtitle">
-    <input bind:value={address} id="address" type="text" placeholder="Address">
-    <input bind:value={email} id="email" type="text" placeholder="Email address">
-    <input bind:value={imgUrl} id="imgUrl" type="text" placeholder="Image Url">
-    <textarea bind:value={description} id="description" placeholder="Description"></textarea>
+    <TextInput  on:input={(event) => {title = event.target.value}} value={title}  id="title" inputType="text" placeholder="Title"/>
+    <TextInput  on:input={(event) => {subtitle = event.target.value}} value={subtitle}  id="subtitle" inputType="text" placeholder="Subtitle"/>
+    <TextInput  on:input={(event) => {address = event.target.value}} value={address}  id="address" inputType="text" placeholder="Adress"/>
+    <TextInput  on:input={(event) => {email = event.target.value}} value={email}  id="email" inputType="text" placeholder="Email"/>
+    <TextInput  on:input={(event) => {imgUrl = event.target.value}} value={imgUrl}  id="img-url" inputType="text" placeholder="Image Url"/>
+    <TextInput  on:input={(event) => {description = event.target.value}} value={description}  id="description" inputType="textarea" placeholder="Enter a description..."/>
     <input type="submit" class="btn-submit">
-</form> -->
+</form>
