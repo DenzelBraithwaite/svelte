@@ -1,16 +1,25 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
 
+    export let agreed = false;
+
+    const createEvent = createEventDispatcher();
 </script>
 
-<div class="backdrop"></div>
+<div on:click={() => {createEvent('cancel')}} class="backdrop"></div>
 <div class="modal">
-    <slot />
-    <slot name="footer">
-        <button>Close</button>
+    <slot name='header'/>
+    <slot name="agree" closeable={agreed}>
+        <button on:click={() => {createEvent('close')}} disabled={!agreed}>Close</button>
     </slot>
+    <slot name="close"/>
 </div>
 
 <style>
+    .hidden {
+        display: none;
+    }
+
     .backdrop{
         position: fixed;
         top: 0;
