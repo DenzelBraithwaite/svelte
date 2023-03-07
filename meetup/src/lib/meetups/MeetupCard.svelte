@@ -15,7 +15,7 @@
         position: relative;
         background-color: #fff;
         border-radius: 0.5rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.199);
+        box-shadow: 0 4px 10px #0000001c;
     }
     
     article img {

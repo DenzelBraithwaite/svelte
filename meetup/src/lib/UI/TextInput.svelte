@@ -1,16 +1,16 @@
 <script>
-    export let value;
-    export let id;
-    export let title;
-    export let subtitle;
-    export let address;
-    export let email;
-    export let imgUrl;
-    export let description;
-    export let inputType;
-    export let cols;
-    export let rows;
-    export let placeholder;
+    export let value = null;
+    export let id = null;
+    export let title = 'title';
+    export let subtitle = 'subtitle';
+    export let address = null;
+    export let email = null;
+    export let imgUrl = 'https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png';
+    export let description = 'description';
+    export let inputType = null;
+    export let cols = 10;
+    export let rows = 3;
+    export let placeholder = null;
 </script>
 
 <style>

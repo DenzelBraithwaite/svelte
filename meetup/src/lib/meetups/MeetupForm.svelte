@@ -19,7 +19,7 @@
         border-radius: 1rem;
         text-align: center;
         background-color: #fff;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.212);
+        box-shadow: 0 2px 8px #0000001a;
     }
 
     form h2 {
@@ -42,6 +42,7 @@
         padding: 0.5rem 0.5rem;
         font-size: 14px;
         letter-spacing: 0;
+        box-shadow: 0 2px 8px #00000025;
         background-color: #a00d26;
     }
 
@@ -62,7 +63,7 @@
 
     <!-- Description, textarea -->
     <TextInput
-        rows=3
+        rows={3}
         inputType="textarea"
         on:input={(event) => {description = event.target.value}}
         value={description} 
