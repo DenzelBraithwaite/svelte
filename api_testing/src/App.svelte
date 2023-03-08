@@ -1,60 +1,59 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  let loading = false;
+  let students = [];
   let first = '';
   let last = '';
-  let students = [];
-
+  let loading = false;
+  
   onMount(() => {
     loading = true;
     fetch('https://svelte-api-testing-default-rtdb.firebaseio.com/students.json')
     .then(res => {
       if (!res.ok) {
-        throw new Error('Somethign went very wrong :c')
+        throw new Error(' NAHHH g u dun goofed!')
       }
-
-      return res.json()
-    }).then(data => {
-      const values = Object.values(data);
-      values.forEach(student => {
-        students = [student, ...students]
-      })
-      loading = false;
+      return res.json()})
+    .then(data => {
+    let values = Object.values(data)
+    values.forEach(student => {
+      console.log(student);
+      students = [student, ...students]
+    })
+    loading = false;
     })
     .catch(err => {
+      console.log(err)
+      loading = false;
+    })
+  });
+
+  function addStudent() {
+    loading = true;
+    const student = {
+      firstName: first,
+      lastName: last
+    }
+
+    students = [student, ...students]
+
+    fetch('https://svelte-api-testing-default-rtdb.firebaseio.com/students.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(student)
+    }).then(res => {
+      if (!res.ok) {
+        throw new Error('some tink went wrong :c')
+      }
+
+      loading = false;
+    }).catch(err => {
       console.log(err);
       loading = false;
     })
-  })
-
-  function addStudent() {
-  loading = true;
-  const student = {
-    firstName: first,
-    lastName: last
   }
-
-  students = [...students, student];
-
-  fetch('https://svelte-api-testing-default-rtdb.firebaseio.com/students.json', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(student)
-  })
-  .then(res => {
-    if (!res.ok) {
-      throw new Error('Something went wrong :(')
-    }
-    loading = false;
-  })
-  .catch(err => {
-    loading = false;
-    console.log(err);
-  })
-}
 </script>
 
 <main>
@@ -70,9 +69,9 @@
   <button on:click={addStudent}>Submit</button>
 
   {#if loading}
-    <p class="loading">Loading ...</p>
+    <p class="loading">Loading...</p>
   {:else}
-    {#each students as student}
+    {#each students as student }
       <div class="student-card">
         <p>First name: {student.firstName}</p>
         <p>Last name: {student.lastName}</p>
