@@ -30,6 +30,27 @@
     console.log(error);
   })
   }
+
+  // Load database data
+  fetch('https://svelte-api-testing-default-rtdb.firebaseio.com/tests.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed!');
+    }
+    return response.json()
+  })
+  .then(data => {
+    let values = Object.values(data);
+    // let keys = Object.keys(data);
+    console.log('Values:');
+    console.log(values);
+    console.log('');
+    values.forEach((teacher) => {
+      teachers = [...teachers, teacher]
+    })
+    })
+  .catch(error => {
+    console.log(error)})
 </script>
 
 <main>
